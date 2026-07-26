@@ -1,18 +1,17 @@
 'use strict';
 var intervaloTemporizador = null;
 var segundosTranscurridos = 0;
-
-function mostrarModal(titulo, mensaje) {
     var modal = document.getElementById('modal-alerta');
     var modalTitulo = document.getElementById('modal-titulo');
     var modalMensaje = document.getElementById('modal-mensaje');
+
+function mostrarModal(titulo, mensaje) {
     modalTitulo.textContent = titulo;
     modalMensaje.textContent = mensaje;
     modal.classList.remove('clase-oculta');
 }
 
 function cerrarModal() {
-    var modal = document.getElementById('modal-alerta');
     modal.classList.add('clase-oculta');
 }
 
