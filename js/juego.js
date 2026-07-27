@@ -157,11 +157,11 @@ function crearCeldaAtributo(etiqueta, valor, coincide) {
 function crearCeldaNumerica(etiqueta, valorIntentado, valorSecreto) {
     var celda = document.createElement('div');
     var coincide = valorIntentado === valorSecreto;
-    celda.className = 'celda-atributo ' + (coincide ? 'celda-correcto' : 'celda-incorrecto');
     var spanEtiqueta = document.createElement('span');
+    var spanValor = document.createElement('span');
+    celda.className = 'celda-atributo ' + (coincide ? 'celda-correcto' : 'celda-incorrecto');
     spanEtiqueta.className = 'etiqueta-celda';
     spanEtiqueta.textContent = etiqueta;
-    var spanValor = document.createElement('span');
     spanValor.className = 'valor-celda';
     if (coincide) {
         spanValor.textContent = valorIntentado;
@@ -507,13 +507,6 @@ function ordenarPorIntentos() {
     renderizarHistorial();
 }
 
-function manejarErrorSonido(error) {
-    console.log(
-        'No se pudo reproducir el sonido: '
-        + error.message
-    );
-}
-
 function reproducirSonido(tipo) {
     var audio;
     if (tipo === 'exito') {
@@ -524,7 +517,7 @@ function reproducirSonido(tipo) {
         audio = new Audio('audio/derrota.mp3');
     }
     if (audio) {
-        audio.play().catch(manejarErrorSonido);
+        audio.play();
     }
 }
 

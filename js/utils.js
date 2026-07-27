@@ -1,9 +1,11 @@
 'use strict';
 var intervaloTemporizador = null;
 var segundosTranscurridos = 0;
-    var modal = document.getElementById('modal-alerta');
-    var modalTitulo = document.getElementById('modal-titulo');
-    var modalMensaje = document.getElementById('modal-mensaje');
+var elementoTemporizador = document.getElementById('temporizador');
+var cuerpo = document.body;
+var modal = document.getElementById('modal-alerta');
+var modalTitulo = document.getElementById('modal-titulo');
+var modalMensaje = document.getElementById('modal-mensaje');
 
 function mostrarModal(titulo, mensaje) {
     modalTitulo.textContent = titulo;
@@ -24,8 +26,6 @@ function formatearTiempo(segundos) {
 }
 
 function actualizarTemporizador() {
-    var elementoTemporizador;
-    elementoTemporizador = document.getElementById('temporizador');
     segundosTranscurridos = segundosTranscurridos + 1;
     elementoTemporizador.textContent = formatearTiempo(
         segundosTranscurridos
@@ -33,8 +33,6 @@ function actualizarTemporizador() {
 }
 
 function iniciarTemporizador() {
-    var elementoTemporizador;
-    elementoTemporizador = document.getElementById('temporizador');
     if (intervaloTemporizador !== null) {
         clearInterval(intervaloTemporizador);
     }
@@ -59,8 +57,6 @@ function obtenerSegundosTranscurridos() {
 }
 
 function conmutarTema() {
-    var cuerpo;
-    cuerpo = document.body;
     if (cuerpo.classList.contains('modo-claro')) {
         cuerpo.classList.remove('modo-claro');
         localStorage.setItem('futbolle_tema', 'oscuro');
@@ -72,9 +68,7 @@ function conmutarTema() {
 
 function cargarTemaPreferido() {
     var temaGuardado;
-    var cuerpo;
     temaGuardado = localStorage.getItem('futbolle_tema');
-    cuerpo = document.body;
     if (temaGuardado === 'claro') {
         cuerpo.classList.add('modo-claro');
     } else {
