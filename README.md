@@ -6,9 +6,9 @@ El sistema selecciona un jugador secreto obtenido desde una API y permite que el
 
 ## Github Pages y repositorio
 
-- **Repositorio:** https://github.com/fassardi245/Futbolle-Final-Web
-- **GitHub Page Principal:** https://fassardi245.github.io/Futbolle-Final-Web/
-- **Page de contacto:** https://fassardi245.github.io/Futbolle-Final-Web/contacto.html
+- **Repositorio:** https://github.com/TeoFassardi/Futbolle-Final-Web
+- **GitHub Page Principal:** https://teofassardi.github.io/Futbolle-Final-Web/
+- **Page de contacto:** https://teofassardi.github.io/Futbolle-Final-Web/contacto.html
 
 ## Cómo funciona
 
